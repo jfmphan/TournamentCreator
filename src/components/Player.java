@@ -6,20 +6,34 @@ package components;
 public class Player {
     private String name;
     private String partner;
-    private int seed;
-    private String flight;
-    private String event;
+    private int seed = 0;
 
-    public Player(String name, int seed, String flight, String event){
+    private String event;
+    private String school;
+
+    public Player(String name, String school, int seed, String event){
         this.name = name;
         this.seed = seed;
-        this.flight = flight;
         this.event = event;
+        this.school = school;
+    }
+
+    public Player(String name, String school,  String event){
+        this.name = name;
+        this.event = event;
+        this.school = school;
+    }
+
+    public Player(String name, int seed, String event, String partner){
+        this.name = name;
+        this.seed = seed;
+        this.event = event;
+        this.partner = partner;
     }
 
     public String getName(){return name;}
     public String getPartner(){return partner;}
     public int getSeed(){return seed;}
-    public String getFlight(){return flight;}
     public String getEvent(){return event;}
+    public String getSchool(){return school;}
 }

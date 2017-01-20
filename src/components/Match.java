@@ -21,6 +21,17 @@ public class Match {
         score[2] = 0;
     }
 
+    public Match(Team team1, Team team2, int matchNumber){
+        this.round = round;
+        this.team1 = team1;
+        this.team2 = team2;
+        this.matchNumber = matchNumber;
+        score[0] = 0;
+        score[1] = 0;
+        score[2] = 0;
+    }
+
+
     public void setScore(int match1, int match2, int match3){
         score[0] = match1;
         score[1] = match2;
