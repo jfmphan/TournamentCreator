@@ -1,4 +1,4 @@
-package components;
+package main.components;
 
 /**
  * Created by jusin on 12/24/2016.
@@ -11,6 +11,13 @@ public class Player {
     private String event;
     private String school;
 
+    public Player(){
+        this.name = "BYE";
+        this.partner = "BYE";
+        this.event = "BYE";
+        this.school = "BYE";
+
+    }
     public Player(String name, String school, int seed, String event){
         this.name = name;
         this.seed = seed;

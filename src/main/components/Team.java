@@ -1,4 +1,4 @@
-package components;
+package main.components;
 
 /**
  * Created by jusin on 12/24/2016.
@@ -11,10 +11,12 @@ public class Team {
 
     public Team(){
         // Represents a "BYE". May later properly define a "BYE" without it meaning a string.
+        player1 = new Player();
     }
 
     public Team(Player player1){
         this.player1 = player1;
+        this.seeding = player1.getSeed();
     }
 
     public Team(Player player1, Player player2, int seeding){
