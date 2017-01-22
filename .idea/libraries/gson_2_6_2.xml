@@ -1,7 +1,7 @@
 <component name="libraryTable">
-  <library name="Groovy">
+  <library name="gson-2.6.2">
     <CLASSES>
-      <root url="jar://$APPLICATION_HOME_DIR$/plugins/Groovy/lib/Groovy.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/gson-2.6.2.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

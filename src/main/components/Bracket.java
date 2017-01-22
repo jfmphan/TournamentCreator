@@ -33,7 +33,7 @@ public class Bracket {
         positions[2] = matches.size() / 2;
         positions[3] = matches.size() - 1;
         int p = 0;
-        int arrCount = 1;
+        int arrCount = 0;
 
         for(int i = 0; i < matches.size(); i++){
 
@@ -45,17 +45,25 @@ public class Bracket {
 
             if(seed > 0 && p < 4){
                 tempMatches[positions[p]] = matches.get(i);
-        //        System.out.println("Added " + positions[p]);
+            //    System.out.println("Added " + positions[p]);
                 p++;
-            }else{
-                while(arrCount == positions[1] || arrCount == positions[2]){
-                    arrCount++;
-                }
-         //       System.out.println("Added " + arrCount);
-                tempMatches[arrCount++] = matches.get(i);
             }
         }
 
+        for(int i = 0; i < matches.size(); i++) {
+
+            int teamSeedOne = matches.get(i).getTeam1().getSeeding();
+            int teamSeedTwo = matches.get(i).getTeam2().getSeeding();
+            int seed = teamSeedOne > teamSeedTwo ? teamSeedOne : teamSeedTwo;
+
+            if (seed == 0) {
+                while (tempMatches[arrCount] != null && arrCount < tempMatches.length) {
+                    arrCount++;
+                }
+            //    System.out.println("Added " + arrCount);
+                tempMatches[arrCount++] = matches.get(i);
+            }
+        }
         return new LinkedList<>(Arrays.asList(tempMatches));
     }
 
@@ -68,12 +76,12 @@ public class Bracket {
         - Seeded players get "byes" first.
      */
     public void makeMatches(){
+
+
         int byeCounter = getByeCounter();
-
-    //    System.out.println("Bye counter: " + byeCounter);
-
+        //    System.out.println("Bye counter: " + byeCounter);
         int matchCounter = setByeMatches(byeCounter, 1);
-    //    System.out.println(teams.size());
+        //    System.out.println(teams.size());
 
         /*
         TO DO: Change it to a normal iterator, while teams.size
@@ -99,8 +107,6 @@ public class Bracket {
     protected int setByeMatches(int byeCounter, int matchCounter){
 
         for(int i = 0; i < teams.size();){
-
-
 
             if(byeCounter <= 0){
                 break;

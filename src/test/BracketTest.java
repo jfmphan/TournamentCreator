@@ -19,10 +19,10 @@ class BracketTest {
     private List<Team> teams = new LinkedList<>();
     @BeforeEach
     void setUp() {
-        Player playerOne = new Player("James","UCI", 1, "AMS");
-        Player playerTwo = new Player("Cordon","UCD", 3, "AMS");
-        Player playerThree = new Player("Bourbon","UCI", 4, "AMS");
-        Player playerFour = new Player("Matthews","UCSD", 2, "AMS");
+        Player playerOne = new Player("James","UCI", "AMS", 1);
+        Player playerTwo = new Player("Cordon","UCD",  "AMS", 3);
+        Player playerThree = new Player("Bourbon","UCI",  "AMS", 4);
+        Player playerFour = new Player("Matthews","UCSD",  "AMS", 2);
         Player playerFive = new Player("Malek","UCB", "AMS");
 
         teams.add(new Team(playerOne));
@@ -44,7 +44,7 @@ class BracketTest {
         teams.add(new Team(new Player("Cid", "UBS", "AMS")));
         teams.add(new Team(new Player("Brandon", "UBS", "AMS")));
         teams.add(new Team(new Player("Brian", "UBS", "AMS")));
-
+        bracket = new Bracket(teams);
         assert bracket.getByeCounter() == 6;
     }
 

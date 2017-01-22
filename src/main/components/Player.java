@@ -5,11 +5,11 @@ package main.components;
  */
 public class Player {
     private String name;
-    private String partner;
-    private int seed = 0;
-
     private String event;
     private String school;
+
+    private String partner = "";
+    private int seed = 0;
 
     public Player(){
         this.name = "BYE";
@@ -18,7 +18,7 @@ public class Player {
         this.school = "BYE";
 
     }
-    public Player(String name, String school, int seed, String event){
+    public Player(String name, String school,  String event, int seed){
         this.name = name;
         this.seed = seed;
         this.event = event;
@@ -31,11 +31,19 @@ public class Player {
         this.school = school;
     }
 
-    public Player(String name, int seed, String event, String partner){
+    public Player(String name, String school, String event, String partner, int seed){
         this.name = name;
         this.seed = seed;
         this.event = event;
         this.partner = partner;
+        this.school = school;
+    }
+
+    public Player(String name, String school, String event, String partner){
+        this.name = name;
+        this.event = event;
+        this.partner = partner;
+        this.school = school;
     }
 
     public String getName(){return name;}

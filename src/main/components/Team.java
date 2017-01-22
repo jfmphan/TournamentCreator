@@ -19,10 +19,22 @@ public class Team {
         this.seeding = player1.getSeed();
     }
 
-    public Team(Player player1, Player player2, int seeding){
+    public Team(Player player1, Player player2){
         this.player1 = player1;
         this.player2 = player2;
-        this.seeding = seeding;
+        this.seeding = player1.getSeed();
+    }
+
+    public String toString(){
+        StringBuilder builder = new StringBuilder();
+
+        builder.append(player1.getName() + ", ");
+        builder.append(player1.getSchool() + ", ");
+        builder.append(player1.getEvent() + ", ");
+        builder.append(player1.getPartner() + ", ");
+        builder.append(player1.getSeed());
+
+        return builder.toString();
     }
 
     public Player getPlayer1(){return this.player1;}

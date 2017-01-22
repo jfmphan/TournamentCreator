@@ -1,0 +1,14 @@
+James,UCD,AMS,1
+Carl,UCD,AMS,2
+Bobby,UCD,AMD,Carl,2
+Jesus,UCI,AMD,Buddha,1
+Cindy,UCI,AWS
+Korea,UCI,AWS,1
+Bobb,UCD,AMD,Ca
+Jes,UCI,AMD,Bud
+Bo,UCSD,AMD,Cam
+J,UCSD,AMD,Bu
+Brian,UCD,AMD,Cae,4
+Jensen,UCI,AMD,Bard,3
+Boris,UCD,AMD,Caus
+Jann,UCI,AMD,Buddy
